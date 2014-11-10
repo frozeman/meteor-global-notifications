@@ -148,6 +148,9 @@ Template['GlobalNotifications'].helpers({
                 return notification;
             });
 
+            if(this.reverse)
+                notes.reverse();
+
             return notes;
         }
     },

@@ -26,13 +26,7 @@ You can also just pass a string, then it will simply show that text:
 
     GlobalNotification.warning('My Text');
 
-This function returns the ID of the notification, which you can use to hide this specific notification programatically:
-
-    var myNotificationId = GlobalNotification.warning('My Text');
-    // ...
-    GlobalNotification.hide(myNotificationId);
-
-Additionally you can localize your message if you have the `TAPi18n` package add to your app by just passing the localization string:
+Additionally you can localize your message if you have the `tap:i18n` package add to your app by just passing the localization string:
 
     GlobalNotification.error({
         title: 'i18n:my.localized.title',
@@ -41,6 +35,12 @@ Additionally you can localize your message if you have the `TAPi18n` package add
 
 Hide Notifications
 ==================
+
+The `GlobalNotification` function returns the ID of the notification, which you can use to hide this specific notification programatically:
+
+    var myNotificationId = GlobalNotification.warning('My Text');
+    // ...
+    GlobalNotification.hide(myNotificationId);
 
 To hide all notifications call:
 
@@ -59,6 +59,14 @@ Though if you don't pass a `duration` as well the notification will never disapp
     // do something
 
     GlobalNotification.hide(myNotificationId);
+
+Order of appearance
+===================
+
+To change the order of appearance of the notifications pass `reverse=true`:
+
+    {{> GlobalNotifications reverse=true}}
+
 
 User action buttons
 ===================
