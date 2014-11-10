@@ -241,7 +241,6 @@ Template['GlobalNotifications_notification'].helpers({
     @method ((cancelText))
     */
     'cancelText': function() {
-        console.log(Template.parentData(2));
         return this.cancelText || Template.parentData(2).cancelText || 'Cancel';
     }
 });
