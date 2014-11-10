@@ -1,0 +1,29 @@
+<template name="GlobalNotifications">
+    <div class="{{wrapperClass}}">
+        {{#Animate}}
+            {{#each listNotifications}}
+                {{> GlobalNotifications_notification}}
+            {{/each}}
+        {{/Animate}}
+    </div>
+</template>
+
+
+<template name="GlobalNotifications_notification">
+    {{#with notification}}
+        <div class="{{class}} animate {{type}}">
+            {{#if title}}
+                <h1>{{title}}</h1>
+            {{/if}}
+            {{#if content}}
+                <p>{{content}}</p>
+            {{/if}}
+            {{#if ok}}
+            <button class="ok">{{okText}}</button>
+            {{/if}}
+            {{#if cancel}}
+            <button class="cancel">{{cancelText}}</button>
+            {{/if}}
+        </div>
+    {{/with}}
+</template>

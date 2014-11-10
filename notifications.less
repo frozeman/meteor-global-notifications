@@ -1,0 +1,71 @@
+@margin: 10px;
+@padding: 10px;
+@animationSpeed: 200ms;
+
+@colorRed: #ef0009;
+@colorYellow: #fecc09;
+@colorBlue: #127cff;
+@colorGreen: #23f113;
+@colorWhite: #fff;
+
+
+.global-notifications {
+    z-index: 100;
+    position: absolute;
+    bottom: @margin;
+    right: @margin;
+
+
+    .global-notification {
+        display: inline-block;
+        float: right;
+        clear: right;
+        max-width: 400px;
+        padding: @padding*2 @padding*3;
+        margin-top: @margin;
+        
+        &.error {
+            background-color: @colorRed;
+            color: @colorWhite;
+        }
+        &.warning {
+            background-color: @colorYellow;
+        }
+        &.info {
+            background-color: @colorBlue;
+            color: @colorWhite;
+        }
+        &.success {
+            background-color: @colorGreen;
+            color: @colorWhite;
+        }
+
+        // ANIMATION
+         -webkit-transition: transform @animationSpeed linear, transform 0.4s 0.2s ease;
+         -moz-transition: transform @animationSpeed linear, transform 0.4s 0.2s ease;
+         -o-transition: transform @animationSpeed linear, transform 0.4s 0.2s ease;
+         transition: transform @animationSpeed linear, transform 0.4s 0.2s ease;
+
+        &.animate {
+            -webkit-transform: translateX(1000px);
+            -moz-transform: translateX(1000px);
+            -ms-transform: translateX(1000px);
+            -o-transform: translateX(1000px);
+            transform: translateX(1000px);
+        }
+
+        h1 {
+            margin: 0;
+            margin-bottom: @margin;
+            padding: 0;
+        }
+        p {
+            margin: 0;
+        }
+        button.ok {
+        }
+        button.cancel {
+            margin-left: @margin;
+        }
+    }
+}
