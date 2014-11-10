@@ -233,7 +233,7 @@ Template['GlobalNotifications_notification'].helpers({
     @method ((okText))
     */
     'okText': function() {
-        return this.okText || 'OK';
+        return this.okText || Template.parentData(2).okText || 'OK';
     },
     /**
     Cancel text
@@ -241,7 +241,8 @@ Template['GlobalNotifications_notification'].helpers({
     @method ((cancelText))
     */
     'cancelText': function() {
-        return this.cancelText || 'Cancel';
+        console.log(Template.parentData(2));
+        return this.cancelText || Template.parentData(2).cancelText || 'Cancel';
     }
 });
 

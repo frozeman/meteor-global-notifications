@@ -72,9 +72,12 @@ User action buttons
 ===================
 
 You can add ok and cancel button, which execute custom functions.
-You can also specify the text of those buttons.
+The ok or cancel buttons will only be shown if you pass a function for the `ok` or `cancel` property.
+You can also specify the text of those buttons either when creating the GlobalNotifications helper, or when displayin a notification:
 
-When the ok or cancel function returns `true` the notification will hide, otherwise it will stay.
+    {{> GlobalNotifications okText="Agree" cancelText="×"}}
+
+If the `ok` or `cancel` functions returns `true` the notification will hide on click when the buttons are clicked.
 When you pass any ok or cancel function the notification will not hide when clicked, except you pass explicitly `closeable: true`.
 This allows you to control the disappearance.
 
@@ -82,10 +85,12 @@ This allows you to control the disappearance.
         content: 'You really want to delete this',
         ok: function(){
             // do something
+            return true;
         },
         okText: 'Delete all', // default is "OK"
         cancel: function(){
             // do something
+            return true;
         },
         cancelText: 'Do nothing' // default is "Cancel"
     });
