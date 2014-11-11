@@ -209,7 +209,9 @@ Template['GlobalNotifications_notification'].helpers({
     @method ((class))
     */
     'class': function() {
-        return Template.parentData(2).class || 'global-notification';
+        return (Template.parentData(2) && Template.parentData(2).class)
+            ? Template.parentData(2).class
+            : 'global-notification';
     },
     /**
     Show OK button?
@@ -233,7 +235,9 @@ Template['GlobalNotifications_notification'].helpers({
     @method ((okText))
     */
     'okText': function() {
-        return this.okText || Template.parentData(2).okText || 'OK';
+        var okText = (Template.parentData(2) && Template.parentData(2).okText)
+            ? Template.parentData(2).okText : null;
+        return this.okText || okText || 'OK';
     },
     /**
     Cancel text
@@ -241,7 +245,9 @@ Template['GlobalNotifications_notification'].helpers({
     @method ((cancelText))
     */
     'cancelText': function() {
-        return this.cancelText || Template.parentData(2).cancelText || 'Cancel';
+        var cancelText = (Template.parentData(2) && Template.parentData(2).cancelText)
+            ? Template.parentData(2).cancelText : null;
+        return this.cancelText || cancelText || 'Cancel';
     }
 });
 
