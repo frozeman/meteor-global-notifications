@@ -1,12 +1,12 @@
 Package.describe({
     name: 'frozeman:global-notifications',
     summary: 'Simple global toaster notifications',
-    version: '0.1.4',
+    version: '0.2.0',
     git: 'http://github.com/frozeman/meteor-global-notifications'
 });
 
 Package.onUse(function(api) {
-    api.versionsFrom('1.0');
+    api.versionsFrom('1.2');
 
     api.use('templating', 'client');
     api.use('less', 'client');
