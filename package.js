@@ -10,6 +10,7 @@ Package.onUse(function(api) {
 
     api.use('templating', 'client');
     api.use('less', 'client');
+    api.use('random', 'client');
     api.use('underscore', 'client');
     api.use('reactive-var', 'client');
     api.use('frozeman:animation-helper@0.2.3', 'client');
